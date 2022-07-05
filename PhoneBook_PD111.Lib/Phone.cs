@@ -14,13 +14,13 @@ public class Phone
     {
         return _typePhone;
     }*/
-    
+
     //public void SetTypePhone(string type) => _typePhone = type;
     /*public void SetTypePhone(string type)
     {
         _typePhone = type;
     }*/
-    
+
     public string Type { get; set; }
     public string Number { get; set; }
 

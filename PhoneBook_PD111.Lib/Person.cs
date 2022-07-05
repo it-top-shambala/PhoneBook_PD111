@@ -18,4 +18,11 @@ public class Person
         Phones = new List<Phone>();
         Addresses = new List<Address>();
     }
+
+    public Person()
+    {
+        Groups = new List<string>();
+        Phones = new List<Phone>();
+        Addresses = new List<Address>();
+    }
 }

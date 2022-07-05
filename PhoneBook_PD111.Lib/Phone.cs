@@ -21,6 +21,6 @@ public class Phone
         _typePhone = type;
     }*/
     
-    public string TypePhone { get; set; }
-    public string PhoneNumber { get; set; }
+    public string Type { get; set; }
+    public string Number { get; set; }
 }

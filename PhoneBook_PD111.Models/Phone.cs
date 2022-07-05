@@ -1,4 +1,4 @@
-﻿namespace PhoneBook_PD111.Lib;
+﻿namespace PhoneBook_PD111.Models;
 
 public class Phone
 {

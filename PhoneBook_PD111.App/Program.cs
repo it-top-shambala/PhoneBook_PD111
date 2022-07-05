@@ -8,13 +8,13 @@ internal static class Program
     private static void Main()
     {
         var exit = false;
-        
+
         var persons = new List<Person>();
 
         do
         {
             ShowMenu();
-            
+
             var select = CLI.Input("Введите номер: ");
             switch (select)
             {
@@ -32,7 +32,7 @@ internal static class Program
                     break;
             }
         } while (!exit);
-        
+
         CLI.ShowInfo("До свидания...");
     }
 

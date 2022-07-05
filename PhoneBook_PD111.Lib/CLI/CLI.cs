@@ -8,6 +8,7 @@ public static class CLI
         Console.WriteLine(message);
         Console.ResetColor();
     }
+
     private static void Show(string message, ConsoleColor color)
     {
         Console.ForegroundColor = color;
@@ -19,12 +20,12 @@ public static class CLI
     {
         ShowLine(message, ConsoleColor.Blue);
     }
-    
+
     public static void ShowError(string message)
     {
         ShowLine(message, ConsoleColor.Red);
     }
-    
+
     public static void ShowSuccess(string message)
     {
         ShowLine(message, ConsoleColor.Green);

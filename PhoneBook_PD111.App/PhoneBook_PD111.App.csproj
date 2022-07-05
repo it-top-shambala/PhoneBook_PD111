@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PhoneBook_PD111.Lib\PhoneBook_PD111.Lib.csproj"/>
+  </ItemGroup>
+
 </Project>

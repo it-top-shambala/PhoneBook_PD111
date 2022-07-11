@@ -1,4 +1,6 @@
-﻿namespace PhoneBook_PD111.Models;
+﻿using PhoneBook_PD111.Models.Phones;
+
+namespace PhoneBook_PD111.Models;
 
 public class Person
 {

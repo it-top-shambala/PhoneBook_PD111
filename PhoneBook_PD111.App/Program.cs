@@ -1,5 +1,7 @@
-﻿using PhoneBook_PD111.Models;
-using PhoneBook_PD111.Lib.CLI;
+﻿using PhoneBook_PD111.Lib.CLI;
+using PhoneBook_PD111.Models.Phones;
+using PhoneBook_PD111.Models.Phones.Number;
+using PhoneBook_PD111.Models.Phones.Type;
 
 namespace PhoneBook_PD111.App;
 
@@ -7,41 +9,23 @@ internal static class Program
 {
     private static void Main()
     {
-        var exit = false;
+        var phoneTypes = new List<string> { "мобильный", "рабочий", "домашний" };
+        
+        CLI.ShowList(phoneTypes);
+        var index = Convert.ToInt32(CLI.Input("Введите номер типа: "));
+        var number = CLI.Input("Введите номер телефона: ");
+        
+        BasePhone phone1 = new Phone(new PhoneType(phoneTypes[index-1]), new EasyPhoneNumber(number));
+        PrintPhone(phone1);
 
-        var persons = new List<Person>();
-
-        do
-        {
-            ShowMenu();
-
-            var select = CLI.Input("Введите номер: ");
-            switch (select)
-            {
-                case "1":
-                    break;
-                case "2":
-                    break;
-                case "3":
-                    break;
-                case "0":
-                    exit = true;
-                    break;
-                default:
-                    CLI.ShowError("Неправильный ввод");
-                    break;
-            }
-        } while (!exit);
-
-        CLI.ShowInfo("До свидания...");
+        var code = CLI.Input("Введите код телефона: ");
+        var number2 = CLI.Input("Введите номер телефона: ");
+        BasePhone phone2 = new Phone(new PhoneType(phoneTypes[index - 1]), new HardPhoneNumber(code, number2));
+        PrintPhone(phone2);
     }
 
-    private static void ShowMenu()
+    static void PrintPhone(BasePhone phone)
     {
-        CLI.ShowInfo("Режимы работы:");
-        CLI.ShowInfo("1. Добавить запись");
-        CLI.ShowInfo("2. Удалить запись");
-        CLI.ShowInfo("3. Показать все записи");
-        CLI.ShowInfo("0. Выйти");
+        CLI.ShowInfo(phone.ToString());
     }
 }

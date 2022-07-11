@@ -36,4 +36,12 @@ public static class CLI
         Show(message, ConsoleColor.Yellow);
         return Console.ReadLine();
     }
+
+    public static void ShowList(List<string> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            ShowInfo($"{i + 1}: {list[i]}");
+        }
+    }
 }
